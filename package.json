@@ -1,0 +1,42 @@
+{
+  "name": "@crewdle/ai-firebase-service",
+  "version": "1.0.0",
+  "description": "AI Firebase Service wrapper for Crewdle applications with workflow and file processing capabilities",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "firebase",
+    "ai",
+    "workflow",
+    "crewdle",
+    "typescript"
+  ],
+  "author": "Crewdle",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/core": ">=15.0.0",
+    "@crewdle/firebase-service": "^1.0.1"
+  },
+  "devDependencies": {
+    "@angular/core": "^17.0.0",
+    "@crewdle/firebase-service": "^1.0.1",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crewdle/ai-firebase-service.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
