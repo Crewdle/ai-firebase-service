@@ -1,6 +1,6 @@
 {
   "name": "@crewdle/ai-firebase-service",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "AI Firebase Service wrapper for Crewdle applications with workflow and file processing capabilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -65,7 +65,7 @@ export class AiFirebaseService {
    * @param files - Optional array of files to include
    * @returns Promise with generated content
    */
-  async generateContent(workflowId: string, messages: WorkflowMessage[], files: File[] = []): Promise<string> {
+  async generateContent(workflowId: string, messages: WorkflowMessage[], files: File[] = [], metadata?: Record<string, any>): Promise<string> {
     const filesToUpload: WorkflowFile[] = [];
     for (const file of files) {
       filesToUpload.push({
@@ -80,6 +80,7 @@ export class AiFirebaseService {
       workflowId,
       messages,
       files: filesToUpload,
+      metadata,
     });
 
     return (response.data as WorkflowResponse).choices[0].message.content;
@@ -92,7 +93,7 @@ export class AiFirebaseService {
    * @param files - Optional array of files to include
    * @returns AsyncGenerator yielding content chunks
    */
-  async *streamContent(workflowId: string, messages: WorkflowMessage[], files: File[] = []): AsyncGenerator<string> {
+  async *streamContent(workflowId: string, messages: WorkflowMessage[], files: File[] = [], metadata?: Record<string, any>): AsyncGenerator<string> {
     const filesToUpload: WorkflowFile[] = [];
     for (const file of files) {
       filesToUpload.push({
@@ -107,6 +108,7 @@ export class AiFirebaseService {
       workflowId,
       messages,
       files: filesToUpload,
+      metadata,
     });
     
     for await (const chunk of stream) {
